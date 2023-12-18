@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>IoT Và Ứng Dụng</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <!--    <link rel="stylesheet" href="/css/loading_dot.css">-->
+    <link rel="stylesheet" href="/icon/themify-icons/themify-icons.css">
+</head>
+
+<body>
+<div id="main">
+    <!--BEGIN SIDEBAR-->
+    <div class="sidebar">
+        <div class="logo">
+            <p>IoT Và Ứng Dụng</p>
+        </div>
+        <div class="line"></div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/">
+                        <div class="menu trangchu">
+                            <i class="ti-home"></i>
+                            <p>Trang Chủ</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/time">
+                        <div class="menu action_history">
+                            <i class="ti-share-alt"></i>
+                            <p>Lịch Sử Tưới</p>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--END SIDEBAR-->
+
+    <!--END HEADER-->
+
+    <!--BEGIN INNERBLOCK-->
+    <div class="content-wrapper">
+        <div class="content-header" style="margin-top:0">
+            <h4>Lịch sử</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- content here -->
+                <div class="col-md-12" style="margin-top: 40px;">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Lich sử</div>
+                        <div class="panel-body">
+                            <table class="table table-bordered
+                                        table-hover">
+                                <thead>
+                                <tr>
+                                    <th style="width:100px;">Id</th>
+                                    <th>Thời lượng</th>
+                                    <th>Thời gian</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>10 phút</td>
+                                    <td>2023-12-18 06:00:00</td>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+                            <style>
+                                .pagination {
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <!-- content here -->
+                <div class="col-md-12">
+                    <div style="margin-bottom:5px;">
+                        <a href="/time/create" class="btn btn-primary">Create</a>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Cài đặt thời gian tưới</div>
+                        <div class="panel-body">
+                            <table class="table table-bordered
+                                            table-hover">
+                                <thead>
+                                <tr>
+                                    <th style="width:100px;">Id</th>
+                                    <th>Thời gian</th>
+                                    <th>Thời lượng</th>
+                                    <th style="width:100px;"></th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="schedule-row">
+
+                                </tbody>
+                            </table>
+                            <style type="text/css">
+                                .pagination {
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end content -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <!--END INNERBLOCK-->
+</div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/js/loading_dot.js"></script>
+<script src="/js/chart.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/schedule.js"></script>
+<script src="/js/main.js"></script>
+
+</html>

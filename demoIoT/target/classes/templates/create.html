@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+        <link
+            href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+            rel="stylesheet">
+        <title>IoT Và Ứng Dụng</title>
+        <link rel="stylesheet" th:href="@{/css/home.css}">
+        <link rel="stylesheet" href="/css/profile.css">
+        <!--    <link rel="stylesheet" href="/css/loading_dot.css">-->
+        <link rel="stylesheet" href="/icon/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <p>IoT Và Ứng Dụng</p>
+            </div>
+            <div class="line"></div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <div class="menu trangchu">
+                                <i class="ti-home"></i>
+                                <p>Trang Chủ</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/time">
+                            <div class="menu action_history">
+                                <i class="ti-share-alt"></i>
+                                <p>Lịch Sử Tưới</p>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        
+                    
+	<div class="col-md-8" style="margin-left: 300px; margin-top: 40px;">  
+	    <div class="panel panel-primary">
+	        <div class="panel-heading">Thêm - sửa</div>
+	        <div class="panel-body">
+	        	<!-- muốn upload được file thì phải có thuộc tính enctype="multipart/form-data" -->
+	        <form method="post" action="/time/create">
+	        	
+	            <!-- rows -->
+	            <div class="row" style="margin-top:5px;">
+	                <div class="col-md-2">Thời gian</div>
+	                <div class="col-md-10">
+	                    <input type="time"  value="" name="thoigian" class="form-control" required>
+	                </div>
+	            </div>
+                <div class="row" style="margin-top:5px;">
+	                <div class="col-md-2">Thời lượng</div>
+	                <div class="col-md-10">
+	                    <input type="number"  value="" name="thoiluong" class="form-control" max="59" required>
+	                </div>
+	            </div>
+	            
+	            
+	            <div class="row" style="margin-top:5px;">
+	                <div class="col-md-2"></div>
+	                <div class="col-md-10">
+	                    <input type="submit" value="Xác nhận" class="btn btn-primary">
+	                </div>
+	            </div>
+	            <!-- end rows -->
+	        </form>
+	        </div>
+	    </div>
+	</div>
+
+                    <!-- end content -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+</body>
+</html>
