@@ -1,5 +1,6 @@
 package com.example.demoiot.service.serviceIml;
 
+import com.example.demoiot.constant.SystemConstant;
 import com.example.demoiot.dto.DataDto;
 import com.example.demoiot.dto.WeatherDto;
 import com.example.demoiot.model.Data;
@@ -21,6 +22,7 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -43,9 +45,10 @@ public class DataServiceIml implements DataService {
 
     @Override
     public WeatherDto getWeather() {
+        WeatherDto weatherDto =  null;
         try {
-            double lat = 44.34;
-            double lon = 10.99;
+            double lat = 21.027763;
+            double lon = 105.834160;
             String appid = "84e69d56ded7404675b73883e6850fdc";
 
             // Tạo URL từ đường dẫn sử dụng URI và String.format
@@ -65,19 +68,31 @@ public class DataServiceIml implements DataService {
 
             // Xử lý dữ liệu phản hồi
             String responseBody = httpResponse.body();
+            System.out.println(responseBody);
             JsonObject jsonObject = new Gson().fromJson(responseBody, JsonObject.class);
 
             JsonArray jsonArray = jsonObject.getAsJsonArray("list");
+
             for (JsonElement e : jsonArray) {
                 if (e.isJsonObject()) {
                     JsonObject tmp = e.getAsJsonObject();
-
+                    String dateGetWeather = tmp.get("dt_txt").toString();
+                    long time = SystemConstant.sdfParse.parse(dateGetWeather.substring(1, dateGetWeather.length()-1)).getTime();
+                    long timeNow = new Date().getTime();
+//                    long time = 0;
+                    if(timeNow - time > 0){
+                        double temp = Double.parseDouble(tmp.getAsJsonObject("main").get("temp").toString()) - 273.15;
+                        double hum = Double.parseDouble(tmp.getAsJsonObject("main").get("humidity").toString());
+                        weatherDto = new WeatherDto(temp, hum);
+                        break;
+                    }
+                    System.out.println(tmp.getAsJsonObject("main").get("temp").toString());
                 }
             }
         } catch (Exception e) {
             // Xử lý lỗi
             e.printStackTrace();
         }
-        return null;
+        return weatherDto;
     }
 }

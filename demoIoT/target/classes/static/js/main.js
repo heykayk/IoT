@@ -11,12 +11,6 @@ function onConnected()
     //Subcrible đến topic /topic/data-receive để lấy dữ liệu mới nhất
     stompClient.subscribe("/topic/data-receive", onNewDataReceived);
 }
-
-function onError()
-{
-    alert("Không thể kết nối tới WebSocket, vui lòng kiểm lại kết nối mạng");
-}
-
 function onNewDataReceived(payload)
 {
     var newData = JSON.parse(payload.body);
@@ -29,6 +23,12 @@ function onNewDataReceived(payload)
     setStatusPump(newData.status);
     myChart.update();
 }
+function onError()
+{
+    alert("Không thể kết nối tới WebSocket, vui lòng kiểm lại kết nối mạng");
+}
+
+
 
 function  getData(){
     drawGraph();

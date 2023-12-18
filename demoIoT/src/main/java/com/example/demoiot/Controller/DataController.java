@@ -1,6 +1,7 @@
 package com.example.demoiot.Controller;
 
 import com.example.demoiot.dto.DataDto;
+import com.example.demoiot.dto.WeatherDto;
 import com.example.demoiot.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,5 +28,11 @@ public class DataController {
     @ResponseBody
     public List<DataDto> getSevenResult(){
         return this.dataService.getTenLastestData();
+    }
+
+    @GetMapping("/weather")
+    @ResponseBody
+    public WeatherDto getWeather(){
+        return this.dataService.getWeather();
     }
 }
