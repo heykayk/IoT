@@ -68,7 +68,6 @@ public class DataServiceIml implements DataService {
 
             // Xử lý dữ liệu phản hồi
             String responseBody = httpResponse.body();
-            System.out.println(responseBody);
             JsonObject jsonObject = new Gson().fromJson(responseBody, JsonObject.class);
 
             JsonArray jsonArray = jsonObject.getAsJsonArray("list");
@@ -94,5 +93,13 @@ public class DataServiceIml implements DataService {
             e.printStackTrace();
         }
         return weatherDto;
+    }
+
+    @Override
+    public DataDto getOneData() {
+        Query query = this.entityManager.createQuery("SELECT new com.example.demoiot.dto.DataDto(d) FROM Data d");
+        query.setMaxResults(1);
+        return (DataDto) query.getSingleResult();
+
     }
 }

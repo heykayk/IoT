@@ -12,13 +12,13 @@ import java.util.List;
 
 public interface DataService {
 
-    default void saveData(Data data) {
-
-    }
+    default void saveData(Data data) {}
 
     default List<DataDto> getTenLastestData() {
         return null;
     }
 
     default WeatherDto getWeather(){return null;}
+
+    default DataDto getOneData(){return null;}
 }

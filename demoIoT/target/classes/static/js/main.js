@@ -20,7 +20,11 @@ function onNewDataReceived(payload)
     labels.push(newData.time.substring(11));
     humidities.push(newData.humidityPercentage);
 
-    setStatusPump(newData.status);
+    var checkbox = document.getElementById("flexSwitchCheckDefault").checked;
+    if(checkbox !== newData.status){
+        document.getElementById("flexSwitchCheckDefault").checked = newData.status;
+        document.getElementById("status-pump").innerHTML = newData.status?"ON":"OFF";
+    }
     myChart.update();
 }
 function onError()
@@ -47,7 +51,8 @@ function  getData(){
                     labels[i] = result[i].time.substring(11);
                 }
             }
-            setStatusPump(result[9].status);
+            document.getElementById("flexSwitchCheckDefault").checked = result[9].status;
+            document.getElementById("status-pump").innerHTML = result[9].status?"ON":"OFF";
             updateChart();
         })
         .catch(error => console.log('error', error));

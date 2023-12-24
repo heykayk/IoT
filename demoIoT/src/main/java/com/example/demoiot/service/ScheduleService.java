@@ -11,6 +11,8 @@ public interface ScheduleService {
     default void deleteById(int id){}
 
     default List<ScheduleDto> getAllSchedule(){return  null;}
+
+    default void setTime(ScheduleDto scheduleDto){}
 }
 
 

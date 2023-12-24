@@ -1,7 +1,9 @@
 package com.example.demoiot.Controller;
 
+import com.example.demoiot.dto.HistoryDto;
 import com.example.demoiot.dto.ScheduleDto;
 import com.example.demoiot.model.Schedule;
+import com.example.demoiot.service.HistoryService;
 import com.example.demoiot.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,9 @@ import java.util.List;
 public class TimeController {
     @Autowired
     private ScheduleService scheduleService;
+
+    @Autowired
+    private HistoryService historyService;
 
     @GetMapping()
     public String displayAll(){
@@ -45,5 +50,11 @@ public class TimeController {
     public String deleteScheduleById(@PathVariable String id){
         this.scheduleService.deleteById(Integer.parseInt(id));
         return "redirect:/time";
+    }
+
+    @GetMapping("/history")
+    @ResponseBody
+    public List<HistoryDto> getListHistory(){
+        return this.historyService.getListHistory();
     }
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "humidity")
+@Table(name = "History")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
