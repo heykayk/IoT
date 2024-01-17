@@ -1,16 +1,10 @@
 package com.example.demoiot.configuration;//package com.example.demo.configuration;
 
-//import com.example.demo.model.Data;
-//import com.example.demo.dto.DataDto;
-//import com.example.demo.handler.DataSocketHandler;
-//import com.example.demo.service.DataService;
 import com.example.demoiot.dto.DataDto;
 import com.example.demoiot.model.Data;
-import com.example.demoiot.repository.DataRepository;
 import com.example.demoiot.service.DataService;
 import com.example.demoiot.ws.WebSocketHandler;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

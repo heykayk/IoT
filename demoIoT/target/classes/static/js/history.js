@@ -15,7 +15,7 @@ function getHistory(){
 getHistory();
 function showHistory(data){
     let tmp = ``;
-    let stt = 0;
+    let stt = 1;
     for(let s of data){
         tmp += `<tr>
                     <td>

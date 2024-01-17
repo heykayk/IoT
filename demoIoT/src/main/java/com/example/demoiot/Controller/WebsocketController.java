@@ -25,6 +25,4 @@ public class WebsocketController {
         return ResponseEntity.ok("ok");
     }
 
-
-
 }

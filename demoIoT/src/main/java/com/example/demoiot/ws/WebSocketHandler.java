@@ -16,7 +16,6 @@ public class WebSocketHandler  {
     }
 
     public void publishData(DataDto newData){
-        System.out.println("Websocket update new data");
         this.messageTemplates.convertAndSend("/topic/data-receive", newData);
     }
 }
